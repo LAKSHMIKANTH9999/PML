@@ -1,0 +1,60 @@
+---
+Title: Statistical Inference Project Part-2
+AUTHOR: REDY
+datEE: 20/10/2020
+OTPUT: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Part 1: BASIC INFERENTIAL ANALYSES
+
+## INFO
+
+```{r, warning=FALSE,message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(stats)
+
+```
+
+### KLEJCEOD3
+
+#### SummarISATION
+
+```{r, warning=FALSE,message=FALSE}
+datsetfrmRpckge<-ToothGrowth
+other<-summary(datsetfrmRpckge)
+other
+coal<-datsetfrmRpckge
+harry<-str(coal)
+```
+
+
+### Load  dataa and perform some ANALYSES
+here we put the dataa and do some exploratory analyses
+
+
+#### SSHORPUT OUTPUT
+a. AA ante amalauram aaa h anhaa puram i e ichapuram neela gtii laagutaru aandhra janam.
+b. naatho vastaava naato vstaava naa pranam anthaa neek iste naato vastaava.
+
+
+
+### 3.peodhhxneo exjepx ohiexnllx
+
+```{r, warning=FALSE,message=FALSE}
+opdatstges<-datsetfrmRpckge %>% group_by(supp,dose) %>% summarize(mnofhght=mean(len),dsofhgt=sd(len),chahl=n())
+opdatstges$lallu <- with(opdatstges,mnofhght-dsofhgt/sqrt(chahl)*qt(0.975,df=chahl-1))
+opdatstges$kanchna <- with(opdatstges,mnofhght+dsofhgt/sqrt(chahl)*qt(0.975,df=chahl-1))
+print(opdatstges[,c(1,2,6,7)])
+```
+
+ ANSWER OPUT 95%. 
+
+### 4 CONCLUSIONS
+ADCHADHU PDU DAQUIT PANNUDA AHA PODUA VANDA .VANDHATA LE VADHATAA LE.
+
+
+
